@@ -1,6 +1,6 @@
+build:
+	docker-compose build
 up: # Up services with current user/group
-	export UID=${UID}
-	export GID=${GID}
 	docker-compose up -d
 
 stop:
