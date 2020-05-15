@@ -1,21 +1,23 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Debug\Debug;
 
 /** @var \Composer\Autoload\ClassLoader $loader */
 $loader = require __DIR__.'/../vendor/autoload.php';
+$env = getenv('SYMFONY_ENV');
 
-// Use APC for autoloading to improve performance
-// Change 'sf2' by the prefix you want in order to prevent key conflict with another application
-/*
-$loader = new ApcClassLoader('sf2', $loader);
-$loader->register(true);
-*/
+if ("dev" === $env) {
+    // Need to trace all kind of errors
+    error_reporting(-1);
+    ini_set('display_errors', 'On');
+    Debug::enable();
+}
 
 require_once __DIR__.'/../src/AppKernel.php';
 //require_once __DIR__.'/../src/AppCache.php';
 
-$kernel = new AppKernel('prod', false);
+$kernel = new AppKernel($env, getenv('SYMFONY_DEBUG'));
 
 //$kernel = new AppCache($kernel);
 $request = Request::createFromGlobals();
