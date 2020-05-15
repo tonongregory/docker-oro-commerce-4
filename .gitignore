@@ -1,0 +1,24 @@
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/public/bundles/
+/var/attachment/*
+/var/cache/*
+/var/import_export/*
+/var/logs/*
+/var/sessions/*
+/vendor/
+/node_modules/
+/public/media/
+/public/build/
+/public/layout-build/
+###< symfony/framework-bundle ###
+
+###> phpstorm
+/.idea/
+###< phpstorm
+
+/docker-compose.override.yml
+
+
