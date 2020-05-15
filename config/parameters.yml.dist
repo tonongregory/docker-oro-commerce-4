@@ -3,8 +3,8 @@ parameters:
     database_host:          sandbox.oro_commerce-4.mysql
     database_port:          ~
     database_name:          oro_commerce_4
-    database_user:          oro
-    database_password:      oro
+    database_user:          root
+    database_password:      root
     database_driver_options: []
 
     mailer_transport:       sendmail
