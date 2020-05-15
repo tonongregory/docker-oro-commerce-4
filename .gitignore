@@ -10,10 +10,10 @@
 /var/sessions/*
 /vendor/
 /node_modules/
-/public/media/
-/public/build/
-/public/js/
-/public/layout-build/
+/public/media/*
+/public/build/*
+/public/js/*
+/public/layout-build/*
 ###< symfony/framework-bundle ###
 
 ###> phpstorm
