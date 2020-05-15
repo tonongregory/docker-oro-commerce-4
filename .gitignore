@@ -19,3 +19,5 @@
 ###> phpstorm
 /.idea/
 ###< phpstorm
+
+docker-compose.override.yml
