@@ -1,10 +1,10 @@
 parameters:
     database_driver:        pdo_mysql
-    database_host:          127.0.0.1
+    database_host:          sandbox.oro_commerce-4.mysql
     database_port:          ~
-    database_name:          b2b_crm_dev
-    database_user:          root
-    database_password:      ~
+    database_name:          oro_commerce_4
+    database_user:          oro
+    database_password:      oro
     database_driver_options: []
 
     mailer_transport:       sendmail
