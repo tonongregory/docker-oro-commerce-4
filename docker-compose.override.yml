@@ -1,0 +1,11 @@
+version: "3.6"
+
+#services:
+#  php:
+#    environment:
+#      XDEBUG_ENABLED: 1
+#      XDEBUG_CONFIG: >-
+#        remote_enable=1
+#        remote_connect_back=1
+#        idekey=PHPSTORM
+#      PHP_IDE_CONFIG: serverName=oro-commerce

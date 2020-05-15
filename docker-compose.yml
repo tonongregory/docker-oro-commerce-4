@@ -1,0 +1,42 @@
+version: '3.6'
+services:
+    php:
+        env_file:
+          - .env
+        container_name: sandbox.oro_commerce-4.php
+        build:
+            context: docker/php
+        user: "${UID}:${GID}"
+        ports:
+            - '9004:9000'
+        volumes:
+            - .:/var/www/html
+            - ./docker/php/conf.d/oro-commerce.ini:/usr/local/etc/php/conf.d/oro-commerce.ini
+        networks:
+            - oro-commerce.sandbox
+    nginx:
+        env_file:
+            - .env
+        container_name: sandbox.oro_commerce-4.nginx
+        image: 'nginx:1.18.0'
+        volumes:
+            - .:/var/www/html
+            - ./docker/nginx/oro-commerce.conf:/etc/nginx/conf.d/default.conf
+        ports:
+            - '80:80'
+            - '8080:8080'
+        networks:
+            - oro-commerce.sandbox
+    mysql:
+        env_file:
+            - .env
+        container_name: sandbox.oro_commerce-4.mysql
+        image: 'mysql:5.7'
+        volumes:
+            - ./docker/mysql:/var/lib/mysql
+        ports:
+            - '3306:3306'
+        networks:
+            - oro-commerce.sandbox
+networks:
+    oro-commerce.sandbox: ~
