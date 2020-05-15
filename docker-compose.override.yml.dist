@@ -6,6 +6,6 @@ version: "3.6"
 #      XDEBUG_ENABLED: 1
 #      XDEBUG_CONFIG: >-
 #        remote_enable=1
-#        remote_connect_back=1
+#        remote_host=XXX.XXX.XXX.XXX # To get you container IP run `docker inspect sandbox.oro_commerce-4.php | grep 'Gateway'`
 #        idekey=PHPSTORM
 #      PHP_IDE_CONFIG: serverName=oro-commerce
